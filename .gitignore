@@ -1,0 +1,16 @@
+# Секрети та налаштування
+.env
+config/dev-env.conf
+
+# Залежності
+node_modules/
+vendor/
+
+# Логи та системні файли
+*.log
+.DS_Store
+Thumbs.db
+
+# Артефакти збірки
+build/
+dist/
