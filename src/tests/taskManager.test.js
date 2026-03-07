@@ -3,11 +3,13 @@ import { getDaysUntilDeadline, validateTask } from '../logic/taskManager';
 
 describe('taskManager - бізнес-логіка', () => {
     describe('getDaysUntilDeadline', () => {
+        // "Заморожуємо" час перед кожним тестом, щоб "сьогодні" завжди було 22 лютого 2026
         beforeEach(() => {
             vi.useFakeTimers();
             vi.setSystemTime(new Date('2026-02-22T00:00:00Z'));
         });
 
+        // Повертаємо реальний системний час після кожного тесту
         afterEach(() => {
             vi.useRealTimers();
         });
@@ -22,7 +24,7 @@ describe('taskManager - бізнес-логіка', () => {
             expect(result).toBe(0);
         });
 
-        it('повертає відємне значення, якщо дедлайн прострочено', () => {
+        it('повертає від’ємне значення, якщо дедлайн прострочено', () => {
             const result = getDaysUntilDeadline('2026-02-20T00:00:00Z');
             expect(result).toBe(-2);
         });
