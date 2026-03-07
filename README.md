@@ -1,5 +1,9 @@
 # Проєкт: Супер Менеджер (Версія Feature)
 
+[![CI/CD Pipeline](https://github.com/Andykorya/lab1-git/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/Andykorya/lab1-git/actions/workflows/ci-cd.yml)
+
+Посилання на сайт: https://lab1-git.vercel.app/
+
 Це мінімально життєздатний продукт (MVP) для керування щоденними завданнями, який допомагає користувачам фокусуватися на головному.
 
 ## 🚀 Основна ідея
