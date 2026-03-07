@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>MVP Task Manager</title>
+</head>
+<body>
+    <h1>Мій менеджер завдань</h1>
+    
+    <p id="status-display" style="color: gray; font-style: italic;"></p>
+    
+    <div>
+        <input type="text" id="taskInput" placeholder="Що потрібно зробити?">
+        <button id="addTaskBtn">Додати завдання</button>
+    </div>
+    
+    <ul id="taskList"></ul>
+
+    <script type="module">
+        // Виведення змінної оточення
+        const statusElement = document.getElementById('status-display');
+        if (statusElement) {
+            statusElement.textContent = import.meta.env.VITE_APP_STATUS;
+        }
+
+        // Мінімальна логіка для роботи інтерфейсу
+        document.getElementById('addTaskBtn').addEventListener('click', () => {
+            const input = document.getElementById('taskInput');
+            const text = input.value.trim();
+            if (text) {
+                const li = document.createElement('li');
+                li.textContent = text;
+                li.className = 'task-item'; // Клас для пошуку в тестах
+                document.getElementById('taskList').appendChild(li);
+                input.value = ''; // Очищаємо поле
+            }
+        });
+    </script>
+</body>
+</html>
